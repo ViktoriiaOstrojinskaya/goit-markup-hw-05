@@ -35,6 +35,7 @@ body {
   --typical-padding: 94px;
   --icon-bgc: #ffffff;
   --icon-fill: #afb1b8;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -105,16 +106,35 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 
+  position: relative;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-color);
+
+  transition: color 250ms var(--timing-function);
 }
 
 .header-link:hover,
 .header-link:focus {
   color: var(--akcent-color);
+}
+
+.header-link.current::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background: var(--akcent-color);
+  border-radius: 2px;
 }
 
 .header-list {
@@ -138,6 +158,8 @@ img {
   line-height: 1.14px;
   letter-spacing: 0.02em;
   color: var(--text-color);
+
+  transition: color 250ms var(--timing-function);
 }
 
 .header-contact {
@@ -223,6 +245,8 @@ img {
   color: var(--second-color);
   background-color: var(--akcent-color);
   cursor: pointer;
+
+  transition: background-color 250ms var(--timing-function);
 }
 
 .hero-btn:hover,
@@ -391,6 +415,8 @@ img {
   border-radius: 50%;
   background-color: var(--icon-bgc);
   color: var(--icon-fill);
+
+  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
 .masters-soc-icon {
@@ -429,6 +455,8 @@ img {
   border-radius: 4px;
   background-color: var(--icon-bgc);
   color: var(--icon-fill);
+
+  transition: border 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
 .clients-soc-icon {
@@ -471,10 +499,14 @@ img {
 
 .footer-address {
   color: var(--second-color);
+
+  transition: color 250ms var(--timing-function);
 }
 
 .footer-link {
   color: var(--footer-color);
+
+  transition: color 250ms var(--timing-function);
 }
 
 .footer-web {
@@ -525,6 +557,8 @@ img {
 
   background: rgba(255, 255, 255, 0.1);
   color: var(--second-color);
+
+  transition: background-color 250ms var(--timing-function);
 }
 
 .footer-soc-icon {
@@ -573,6 +607,9 @@ img {
   background: var(--btn-bkg);
   cursor: pointer;
   text-align: center;
+
+  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .holder-item:not(:last-child) {
@@ -629,6 +666,8 @@ img {
 
 .pictures-active {
   display: block;
+
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .pictures-active:hover,
