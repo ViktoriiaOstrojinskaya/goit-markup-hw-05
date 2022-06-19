@@ -343,6 +343,34 @@ img {
   margin-right: 30px;
 }
 
+.about-thumb {
+  position: relative;
+}
+
+.about-actions-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--second-color);
+}
+
+.about-actions {
+  position: absolute;
+  display: flex;
+
+  width: 370px;
+  height: 70px;
+  bottom: 0;
+  left: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(47, 48, 58, 0.8);
+}
+
 .team {
   background-color: #f5f4fa;
 }
@@ -674,4 +702,80 @@ img {
 .pictures-active:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.pictures-top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.pictures-top-text {
+  position: absolute;
+  top: 0;
+
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--second-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  min-width: 322px;
+  height: 100%;
+  padding: 63px 24px;
+
+  overflow: auto;
+
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
+}
+
+.pictures-active:hover .pictures-top-text,
+.pictures-active:focus .pictures-top-text {
+  transform: translateY(0);
+}
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 528px;
+  min-height: 581px;
+  background: var(--btn-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform 250ms var(--timing-function);
+}
+
+.modal-close-btn {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
