@@ -771,7 +771,7 @@ img {
 
 .modal-close-btn {
   position: absolute;
-  top: -59px;
+  top: 8px;
   right: 8px;
 
   border-radius: 50%;
